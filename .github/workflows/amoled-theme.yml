@@ -1,4 +1,4 @@
-name: Verify AMOLED theme
+name: Verify TizenTube features
 
 on:
   push:
@@ -25,6 +25,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm run test:theme
+      - run: npm run test:quality
+      - run: npm run test:quality:browser
       - run: npm run build
       - name: Check committed release bundle matches source
         run: cmp ../u.js ../dist/userScript.js

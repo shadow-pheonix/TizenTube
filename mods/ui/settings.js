@@ -386,23 +386,34 @@ export default function modernUI(update, parameters) {
                     ]
                 },
                 {
-                    name: t('settings.options.videoPlayer.options.preferredVideoQuality.title'),
+                    name: t('settings.options.videoPlayer.options.defaultResolution.title'),
                     icon: 'VIDEO_QUALITY',
                     value: null,
                     menuId: 'tt-preferred-video-quality',
                     menuHeader: {
-                        title: t('settings.options.videoPlayer.options.preferredVideoQuality.title'),
-                        subtitle: t('settings.options.videoPlayer.options.preferredVideoQuality.subtitle')
+                        title: t('settings.options.videoPlayer.options.defaultResolution.title'),
+                        subtitle: t('settings.options.videoPlayer.options.defaultResolution.subtitle')
                     },
                     options:
-                        ['Auto', '2160p', '1440p', '1080p', '720p', '480p', '360p', '240p', '144p'].map((quality) => {
+                        ['auto', 'highest', '4320p', '2880p', '2160p', '1440p', '1080p', '720p', '480p', '360p', '240p', '144p'].map((quality) => {
                             return {
-                                name: quality === 'Auto' ? t('settings.options.videoPlayer.options.qualityAuto') : quality,
+                                name: quality === 'auto' ? t('settings.options.videoPlayer.options.qualityAuto') : quality === 'highest' ? t('player.quality.highest') : quality,
                                 key: 'preferredVideoQuality',
                                 value: quality.toLowerCase()
                             }
                         })
 
+                },
+                {
+                    name: t('settings.options.videoPlayer.options.highestBitrate.title'),
+                    subtitle: t('settings.options.videoPlayer.options.highestBitrate.subtitle'),
+                    value: 'preferHighestBitrate'
+                },
+                {
+                    name: t('player.quality.title'),
+                    icon: 'VIDEO_QUALITY',
+                    value: null,
+                    action: { customAction: { action: 'TT_QUALITY_SETTINGS_SHOW' } }
                 },
                 {
                     name: t('settings.options.videoPlayer.options.speedSettings.title'),

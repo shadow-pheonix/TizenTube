@@ -99,6 +99,14 @@
                         "title": "Preferred Video Quality",
                         "subtitle": "Choose the preferred or next best video quality applied when playback starts"
                     },
+                    "defaultResolution": {
+                        "title": "Default resolution",
+                        "subtitle": "Use this resolution, or the best available lower resolution, on every video. Highest available has no resolution limit."
+                    },
+                    "highestBitrate": {
+                        "title": "Prefer highest bitrate",
+                        "subtitle": "Prefer the highest reported bitrate when multiple playable formats offer the selected resolution."
+                    },
                     "speedSettings": {
                         "title": "Speed Settings Increments",
                         "subtitle": "Set the speed increments for video playback speed adjustments"
@@ -283,6 +291,17 @@
         }
     },
     "player": {
+        "quality": {
+            "title": "Video quality",
+            "subtitle": "Choices apply to this video. Set a default in TizenTube Settings → Video Player Settings → Default resolution.",
+            "auto": "Auto",
+            "autoSubtitle": "Let YouTube adapt quality to your connection.",
+            "highest": "Highest available",
+            "highestSubtitle": "Best available resolution: {{quality}}",
+            "bitrate": "Video bitrate: {{bitrate}}",
+            "bitrateUnavailable": "YouTube has not reported a bitrate for this quality.",
+            "notReady": "Start a video, then reopen Video quality to see its available resolutions and bitrates."
+        },
         "playbackSpeed": {
             "title": "Playback Speed",
             "button": "Speed Controls",

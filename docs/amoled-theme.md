@@ -18,7 +18,7 @@ npm install
 npm run build
 ```
 
-The output is `dist/userScript.js`. The `amoled01` tag also includes an identical
+The output is `dist/userScript.js`. The `amoled02` tag also includes an identical
 release copy at `u.js`, used by the companion Android fork:
 https://github.com/shadow-pheonix/TizenTubeCobalt/tree/feature/amoled-pitch-black
 

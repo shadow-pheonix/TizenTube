@@ -5,6 +5,7 @@ import { timelyAction, longPressData, MenuServiceItemRenderer, ShelfRenderer, Ti
 import { findFeedbackToken } from '../utils/innerTubeCalls.js';
 import { PatchSettings } from '../ui/customYTSettings.js';
 import { t } from 'i18next';
+import { rememberQualityFormats } from '../utils/videoQuality.js';
 
 /**
  * This is a minimal reimplementation of the following uBlock Origin rule:
@@ -55,6 +56,8 @@ JSON.parse = function () {
         });
       }
     }
+
+    rememberQualityFormats(r);
 
     // Drop "masthead" ad from home screen
     if (

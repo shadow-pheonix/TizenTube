@@ -8,6 +8,7 @@ import { t } from 'i18next';
 import { requestNextAndNavigateChannel, getFeedbackPanelTokens, sendFeedbackToken } from './utils/innerTubeCalls.js';
 import qrcode from 'qrcode-npm';
 import showGuideSettings from './ui/sidebarModification.js';
+import { qualitySettings, patchQualityMenu } from './ui/qualityUI.js';
 
 export default function resolveCommand(cmd, _) {
     // resolveCommand function is pretty OP, it can do from opening modals, changing client settings and way more.
@@ -81,6 +82,7 @@ export function patchResolveCommand() {
                 } else if (cmd?.openPopupAction?.uniqueId === 'playback-settings') {
                     // Patch the playback settings popup to use TizenTube speed settings
                     const items = cmd.openPopupAction.popup.overlaySectionRenderer.overlay.overlayTwoPanelRenderer.actionPanel.overlayPanelRenderer.content.overlayPanelItemListRenderer.items;
+                    patchQualityMenu(items);
                     for (const item of items) {
                         const iconType = item?.compactLinkRenderer?.icon?.iconType;
                         if (iconType === 'SLOW_MOTION_VIDEO' || iconType === 'SPEEDOMETER') {
@@ -217,6 +219,12 @@ function customAction(action, parameters) {
             break;
         case 'TT_SPEED_SETTINGS_SHOW':
             speedSettings();
+            break;
+        case 'TT_QUALITY_SETTINGS_SHOW':
+            qualitySettings();
+            break;
+        case 'SET_PLAYER_QUALITY':
+            window.preferredVideoQualityHandler?.setManualQuality(parameters);
             break;
         case 'UPDATE_REMIND_LATER':
             configWrite('dontCheckUpdateUntil', parameters);

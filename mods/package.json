@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "test:theme": "node --test tests/theme.browser.mjs"
+    "test:theme": "node --test tests/theme.browser.mjs",
+    "test:quality": "node --test tests/quality.test.mjs",
+    "test:quality:browser": "node --test tests/quality.browser.mjs"
   },
   "keywords": [],
   "author": "Reis Can, YouTube WebOs contributors",
