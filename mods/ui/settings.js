@@ -93,6 +93,12 @@ export default function modernUI(update, parameters) {
             value: 'enableAdBlock'
         },
         {
+            name: t('settings.options.amoledTheme.title'),
+            subtitle: t('settings.options.amoledTheme.subtitle'),
+            icon: 'SETTINGS',
+            value: 'enableAmoledTheme'
+        },
+        {
             name: t('settings.options.sponsorblock.title'),
             icon: 'MONEY_HAND',
             value: null,

@@ -16,6 +16,10 @@
                 "githubSponsors": "GitHub Sponsors"
             },
             "adBlock": "Ad Block",
+            "amoledTheme": {
+                "title": "AMOLED / Pitch black theme",
+                "subtitle": "Use pure-black backgrounds. Turn off to restore your custom colors."
+            },
             "sponsorblock": {
                 "title": "SponsorBlock Settings",
                 "options": {

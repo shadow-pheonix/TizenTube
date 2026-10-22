@@ -1,0 +1,34 @@
+name: Verify AMOLED theme
+
+on:
+  push:
+    branches: [feature/amoled-pitch-black]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  theme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: mods
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: mods/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:theme
+      - run: npm run build
+      - name: Check committed release bundle matches source
+        run: cmp ../u.js ../dist/userScript.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AMOLED-userscript
+          path: dist/userScript.js
