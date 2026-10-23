@@ -806,7 +806,8 @@ export default function modernUI(update, parameters) {
                         ]
                     ),
                     {
-                        name: t('settings.options.updater.options.checkForUpdatesOnStartup'),
+                        name: t('settings.options.forkUpdater.autoCheck'),
+                        subtitle: t('settings.options.forkUpdater.autoCheckSubtitle'),
                         icon: 'SYSTEM_UPDATE',
                         value: 'enableUpdater'
                     }

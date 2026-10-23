@@ -27,6 +27,8 @@ jobs:
       - run: npm run test:theme
       - run: npm run test:quality
       - run: npm run test:quality:browser
+      - run: npm run test:updater
+      - run: npm run test:updater:browser
       - run: npm run build
       - name: Check committed release bundle matches source
         run: cmp ../u.js ../dist/userScript.js

@@ -230,8 +230,7 @@ function customAction(action, parameters) {
             configWrite('dontCheckUpdateUntil', parameters);
             break;
         case 'UPDATE_DOWNLOAD':
-            window.h5vcc.tizentube.InstallAppFromURL(parameters);
-            showToast(t('settings.options.updater.downloading.title'), t('settings.options.updater.downloading.subtitle'));
+            checkForUpdates(true);
             break;
         case 'SET_PLAYER_SPEED':
             const speed = Number(parameters);

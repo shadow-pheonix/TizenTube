@@ -214,9 +214,13 @@
                     "enableShrinkingThumbnails": "Enable Shrinked Thumbnails"
                 }
             },
+            "forkUpdater": {
+                "autoCheck": "Automatically download fork updates",
+                "autoCheckSubtitle": "Check on startup and every hour while the app is open. Ask before installing downloaded updates."
+            },
             "updater": {
                 "title": "TizenTube Cobalt Updater",
-                "menuSubtitle": "Manage TizenTube Cobalt updates",
+                "menuSubtitle": "Updates from shadow-pheonix/TizenTubeCobalt. Downloads are verified; Android asks you to install.",
                 "versionSubtitle": "Current version: {{version}}",
                 "options": {
                     "checkForUpdates": "Check for updates",

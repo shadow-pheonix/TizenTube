@@ -8,7 +8,9 @@
     "build": "rollup -c rollup.config.js",
     "test:theme": "node --test tests/theme.browser.mjs",
     "test:quality": "node --test tests/quality.test.mjs",
-    "test:quality:browser": "node --test tests/quality.browser.mjs"
+    "test:quality:browser": "node --test tests/quality.browser.mjs",
+    "test:updater": "node --test tests/updater.test.mjs",
+    "test:updater:browser": "node --test tests/updater.browser.mjs"
   },
   "keywords": [],
   "author": "Reis Can, YouTube WebOs contributors",
