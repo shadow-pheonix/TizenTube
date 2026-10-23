@@ -3,6 +3,7 @@ import { showModal, buttonItem, overlayPanelItemListRenderer, scrollPaneRenderer
 import qrcode from 'qrcode-npm';
 import { t } from 'i18next';
 import resolveCommand from '../resolveCommand.js';
+import { supportsUpscaler } from '../utils/upscaler.js';
 
 const qrcodes = {};
 
@@ -409,6 +410,21 @@ export default function modernUI(update, parameters) {
                     subtitle: t('settings.options.videoPlayer.options.highestBitrate.subtitle'),
                     value: 'preferHighestBitrate'
                 },
+                supportsUpscaler(window.h5vcc?.tizentube) ? {
+                    name: t('settings.options.videoPlayer.options.upscaler.title'),
+                    subtitle: t('settings.options.videoPlayer.options.upscaler.subtitle'),
+                    icon: 'VIDEO_QUALITY',
+                    value: null,
+                    menuId: 'tt-video-upscaler',
+                    menuHeader: {
+                        title: t('settings.options.videoPlayer.options.upscaler.title'),
+                        subtitle: t('settings.options.videoPlayer.options.upscaler.subtitle')
+                    },
+                    options: ['off', 'auto', 'quality'].map(mode => ({
+                        name: t(`settings.options.videoPlayer.options.upscaler.${mode}`),
+                        key: 'videoUpscaler', value: mode
+                    }))
+                } : null,
                 {
                     name: t('player.quality.title'),
                     icon: 'VIDEO_QUALITY',

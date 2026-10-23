@@ -107,6 +107,13 @@
                         "title": "Prefer highest bitrate",
                         "subtitle": "Prefer the highest reported bitrate when multiple playable formats offer the selected resolution."
                     },
+                    "upscaler": {
+                        "title": "Video upscaler (SGSR1)",
+                        "subtitle": "Sharper SDR video below the display resolution. Applies to the next video. HDR and protected video use normal playback.",
+                        "off": "Off",
+                        "auto": "Auto — reduce processing if rendering stalls",
+                        "quality": "Quality — keep edge-aware upscaling enabled"
+                    },
                     "speedSettings": {
                         "title": "Speed Settings Increments",
                         "subtitle": "Set the speed increments for video playback speed adjustments"

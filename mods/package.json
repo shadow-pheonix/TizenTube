@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test:upscaler": "node --test tests/upscaler.test.mjs",
     "build": "rollup -c rollup.config.js",
     "test:theme": "node --test tests/theme.browser.mjs",
     "test:quality": "node --test tests/quality.test.mjs",

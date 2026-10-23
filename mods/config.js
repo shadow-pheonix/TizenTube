@@ -16,6 +16,7 @@ const defaultConfig = {
   videoSpeed: 1,
   preferredVideoQuality: 'auto',
   preferHighestBitrate: true,
+  videoUpscaler: 'auto',
   enableDeArrow: true,
   enableDeArrowThumbnails: false,
   focusContainerColor: '#0f0f0f',
